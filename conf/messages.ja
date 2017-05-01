@@ -1,0 +1,5 @@
+# --- Constraints
+constraint.required=必須
+# --- Formats
+# --- Errors
+error.required=必要な項目が入力されていません。
