@@ -3,21 +3,29 @@
     @import helper._
 
 @main("Todo List") {
-    <h1>Todo List</h1>
+    <h1><p class="bg-success">Todo List</p></h1> <br>
     <h4>残り@todos.size 個</h4>
 
     <ul>
+    <div class="todo-table" style="width:500px;">
+    <table class="table table-hover">
+    <tbody>
     @todos.map { todo =>
-        <li>
-            <label> @todo.label</label>
-            @form(routes.TodoController.deleteTodo(todo.id)) {
-                <input type="submit" class="btn btn-default" value="DONE">
-                }
-        </li>
+        <tr>
+            <td class="col-md-10">@todo.label</td>
+            <td class="col-md-2">
+                <form style="display: inline" action="@routes.TodoController.deleteTodo(todo.id)" method="post">
+                    <button class="btn-sm">DONE</button>
+                </form>
+            </td>
+        </tr>
     }
+    </tbody>
+    </table>
+    </div>
     </ul>
 
-    <hr>
+    <br> <hr>
     <h4>タスクを追加</h4>
 
     @form(routes.TodoController.newTodo()) {
