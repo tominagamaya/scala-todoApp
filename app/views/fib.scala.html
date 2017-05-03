@@ -1,0 +1,19 @@
+@(fibNum: Long)(implicit messages: Messages)
+
+@main("Fibonacci Numbers") {
+    <h1><p class="bg-info">Fibonacci Numbers</p></h1> <br>
+    <br>
+    <h4>0〜103番目までのフォボナッチ数を算出します。</h4>
+
+    <form method="get" action="/result">
+        <div class="col-xs-2">
+            <input type="number" class="form-control" name="num" required>
+        </div>
+        番目のフィボナッチ数　　
+
+        <input type="submit" class="btn btn-primary btn-md todo-action-button" value="MAKE">
+    </form>
+    <br>
+    <h2>結果</h2>
+    フィボナッチ数： @fibNum
+}
